@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:shimmer="clr-namespace:Facebook.Shimmer;assembly=Xamarin.Facebook.Shimmer.Forms"
+    x:Class="Sample.Forms.MainPage"
+    mc:Ignorable="d">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="Play"
+            Clicked="Handle_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <shimmer:ShimmerView
+            Play="True"
+            Duration="300"
+            x:Name="shimmerView"
+            Direction="RightToLeft"
+            BackgroundColor="AliceBlue"
+            Padding="10">
+            <StackLayout>
+            <Label
+                Text="Welcome to Xamarin.Forms!"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                TextColor="White"
+                HeightRequest="100"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"
+                BackgroundColor="Black"/>
+                </StackLayout>
+        </shimmer:ShimmerView> 
+    </ContentPage.Content>           
+</ContentPage>

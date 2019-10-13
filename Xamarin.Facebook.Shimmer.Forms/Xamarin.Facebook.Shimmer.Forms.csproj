@@ -1,0 +1,87 @@
+<Project Sdk="MSBuild.Sdk.Extras/2.0.41">
+
+    <PropertyGroup>
+        <!--To Multi-targeting-->
+        <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid81</TargetFrameworks>
+        
+        <!--Assembly and Namespace info -->
+        <AssemblyName>Xamarin.Facebook.Shimmer.Forms</AssemblyName>
+        <RootNamespace>Xamarin.Facebook.Shimmer.Forms</RootNamespace>        
+        <Product>$(AssemblyName) ($(TargetFramework))</Product>
+        
+        <!-- Assembly Version -->
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <AssemblyFileVersion>1.0.0</AssemblyFileVersion>
+        <Version>1.0.0</Version>
+                       
+        <!--NuGet info -->       
+        <Owners>Josué Díaz</Owners>
+        <Authors>Josué Díaz</Authors>
+        <Copyright>Copyright © 2018</Copyright>
+        
+        <Title>Facebook Shimmer for Xamarin.Forms</Title>        
+        <Summary>Use a Shimmer View in your Xamarin.Forms projects! Ensure you call ShimmerRenderer.Init() on each platform!</Summary>
+        <Description>Use a Shimmer View in your Xamarin.Forms projects! Ensure you call ShimmerRenderer.Init() on each platform!</Description>
+        
+        <PackageId>Xamarin.Facebook.Shimmer.Forms</PackageId>
+        <PackageVersion>1.0.0.0</PackageVersion>
+                
+        <PackageIconUrl>https://raw.githubusercontent.com/xamarin/FacebookComponents/master/icons/facebook-android_128x128.png</PackageIconUrl>
+        <PackageLicenseUrl>https://github.com/JosueDM94/Xamarin.Facebook.Shimmer/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/JosueDM94/Xamarin.Facebook.Shimmer</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/JosueDM94/Xamarin.Facebook.Shimmer</RepositoryUrl>
+        <PackageReleaseNotes>See: https://github.com/JosueDM94/Xamarin.Facebook.Shimmer</PackageReleaseNotes>
+        <PackageTags>Xamarin.Forms, iOS, Android, Shimmering, Xamarin, Facebook, Shimmer, Xamarin.iOS, Xamarin.Android, Droid, Animation, Animations, Placeholder, Loading</PackageTags>
+        
+        <!--Language and Version of C# to use -->
+        <NeutralLanguage>en</NeutralLanguage>
+        <LangVersion>default</LangVersion>
+        
+        <!-- Helper to add defines-->
+        <DefineConstants>$(DefineConstants);</DefineConstants>
+        
+        <!--Don't auto add files for me, I will tell you -->
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    </PropertyGroup>
+    
+    <!-- Define what happens on build and release -->
+    <PropertyGroup Condition=" '$(Configuration)'=='Debug'">
+        <DebugType>full</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    </PropertyGroup>
+      
+    <PropertyGroup Condition=" '$(Configuration)'=='Release'">
+        <DebugType>pdbonly</DebugType>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        
+        <!-- If we want a nuget package add this-->
+        <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->         
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <!-- This None is here so the conditionally included files show up in the Solution Explorer -->
+        <None Include="**\*.cs;**\*.xml;**\*.axml;**\*.png" Exclude="obj\**\*.*;bin\**\*.*;bin;obj" />
+       
+        <!-- We will compile anything ending in .shared.cs  You can change this --> 
+        <Compile Include="**\*.Shared.cs" />
+        
+        <!-- NuGet Reference -->
+        <PackageReference Include="Xamarin.Forms" Version="4.2.0.848062" />        
+    </ItemGroup>
+
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard'))">
+    </ItemGroup>
+
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid'))">
+        <Compile Include="*.Android.cs" />
+        <PackageReference Include="Xamarin.Facebook.Shimmer" Version="1.0.0" />
+        <!--<ProjectReference Include="..\Xamarin.Facebook.Shimmer.Android\Xamarin.Facebook.Shimmer.Android.csproj"/>-->
+    </ItemGroup>
+
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS'))">
+        <Compile Include="*.iOS.cs" />
+        <PackageReference Include="Xamarin.Facebook.Shimmer" Version="1.0.0" />
+        <!--<ProjectReference Include="..\Xamarin.Facebook.Shimmer.iOS\Xamarin.Facebook.Shimmer.iOS.csproj"/>-->
+    </ItemGroup>
+</Project>

@@ -17,7 +17,7 @@
     <AssemblyName>Xamarin.Facebook.Shimmer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Owners>Josué Díaz</Owners>
-    <Copyright>Copyright Josué Díaz © 2018</Copyright>
+    <Copyright>Copyright © 2018</Copyright>
     <PackageTags>Xamarin Facebook Shimmer Xamarin.iOS Xamarin.Android Droid Animation Animations Placeholder Loading</PackageTags>
     <Title>Xamarin.Facebook.Shimmer</Title>
     <NeutralLanguage>en-US</NeutralLanguage>
@@ -25,6 +25,7 @@
     <PackageProjectUrl>https://github.com/JosueDM94/Xamarin.Facebook.Shimmer</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/xamarin/FacebookComponents/master/icons/facebook-android_128x128.png</PackageIconUrl>
     <PackageLicenseUrl>https://github.com/JosueDM94/Xamarin.Facebook.Shimmer/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageReleaseNotes>See: https://github.com/JosueDM94/Xamarin.Facebook.Shimmer</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
