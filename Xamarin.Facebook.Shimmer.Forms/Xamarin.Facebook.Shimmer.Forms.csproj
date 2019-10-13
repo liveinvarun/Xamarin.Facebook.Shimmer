@@ -10,9 +10,9 @@
         <Product>$(AssemblyName) ($(TargetFramework))</Product>
         
         <!-- Assembly Version -->
-        <AssemblyVersion>1.0.0</AssemblyVersion>
-        <AssemblyFileVersion>1.0.0</AssemblyFileVersion>
-        <Version>1.0.0</Version>
+        <AssemblyVersion>1.0.1</AssemblyVersion>
+        <AssemblyFileVersion>1.0.1</AssemblyFileVersion>
+        <Version>1.0.1</Version>
                        
         <!--NuGet info -->       
         <Owners>Josué Díaz</Owners>
@@ -24,7 +24,7 @@
         <Description>Use a Shimmer View in your Xamarin.Forms projects! Ensure you call ShimmerRenderer.Init() on each platform!</Description>
         
         <PackageId>Xamarin.Facebook.Shimmer.Forms</PackageId>
-        <PackageVersion>1.0.0.0</PackageVersion>
+        <PackageVersion>1.0.1</PackageVersion>
                 
         <PackageIconUrl>https://raw.githubusercontent.com/xamarin/FacebookComponents/master/icons/facebook-android_128x128.png</PackageIconUrl>
         <PackageLicenseUrl>https://github.com/JosueDM94/Xamarin.Facebook.Shimmer/blob/master/LICENSE</PackageLicenseUrl>
@@ -75,13 +75,13 @@
 
     <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid'))">
         <Compile Include="*.Android.cs" />
-        <PackageReference Include="Xamarin.Facebook.Shimmer" Version="1.0.0" />
-        <!--<ProjectReference Include="..\Xamarin.Facebook.Shimmer.Android\Xamarin.Facebook.Shimmer.Android.csproj"/>-->
+        <PackageReference Include="Xamarin.Facebook.Shimmer" Version="1.0.1" />
+        <!--<ProjectReference Include="..\Xamarin.Facebook.Shimmer.iOS\Xamarin.Facebook.Shimmer.iOS.csproj"/>-->
     </ItemGroup>
 
     <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS'))">
         <Compile Include="*.iOS.cs" />
-        <PackageReference Include="Xamarin.Facebook.Shimmer" Version="1.0.0" />
+        <PackageReference Include="Xamarin.Facebook.Shimmer" Version="1.0.1" />
         <!--<ProjectReference Include="..\Xamarin.Facebook.Shimmer.iOS\Xamarin.Facebook.Shimmer.iOS.csproj"/>-->
     </ItemGroup>
 </Project>
